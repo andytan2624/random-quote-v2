@@ -1,4 +1,6 @@
-// quotes global variable
+/**
+ * quotes global variable
+ */
 var quotes = [
     {
         'quote' : 'BLOOD, SWEAT AND RESPECT. The first two you give, the last you earn.',
@@ -16,7 +18,7 @@ var quotes = [
     },
     {
         'quote' : 'Success only comes with great ambition.',
-        'citation': 'Jackie Chan',
+        'source': 'Jackie Chan',
         'tags': ['inspirational', 'film']
     },
     {
@@ -40,16 +42,21 @@ var quotes = [
     }
 ];
 
-var nIntervId;
-
-// Global variable to house
+/**
+ * Global variable to house
+ */
 var usedQuotes = [];
 
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
+/**
+ * event listener to respond to "Show another quote" button clicks
+ * when user clicks anywhere on the button, the "printQuote" function is called
+ */
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-// Pick a random quote object from the array
+/**
+ * Pick a random quote object from the array
+ * @returns {{quote, source, citation, year, tags}*}
+ */
 function getRandomQuote() {
 
     // Check if quotes is empty. if so, make quotes equal to usedQuotes and empty then empty usedQuotes
@@ -73,7 +80,10 @@ function getRandomQuote() {
     return quote;
 }
 
-// Function to get a quote from the array and print out, Change the background colour as well
+/**
+ * Function to get a quote from the array and print out, Change the background colour as well
+ * @returns none
+ */
 function printQuote() {
     var quoteObject = getRandomQuote();
     var quoteText = '<p class="quote">' + quoteObject.quote + '</p><p class="source">' + quoteObject.source;
